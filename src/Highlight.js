@@ -7,6 +7,10 @@ export default class Highlight extends Component {
     children: PropTypes.node
   }
 
+  shouldComponentUpdate(np) {
+    return np.children !== this.props.children
+  }
+
   componentDidUpdate () {
     if (this._el) {
       highlightBlock(this._el)
